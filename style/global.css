@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,600;1,400&family=Source+Sans+Pro&display=swap");
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  width: min(100%, 114rem);
+  margin: 0 auto;
+}
+.header__input {
+  display: none;
+}
+.header__toggle {
+  margin: 2rem;
+}
+.header__toggle .toggle {
+  border-bottom: 2px solid black;
+  height: 2px;
+  width: 20px;
+  display: inline-block;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: all 0.5s;
+}
+.header__toggle .toggle::after, .header__toggle .toggle::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  display: inline-block;
+  transition: all 0.5s;
+}
+.header__toggle .toggle::after {
+  top: -5px;
+  left: 0;
+  border-bottom: 2px solid black;
+}
+.header__toggle .toggle::before {
+  top: 5px;
+  left: 0;
+  border-bottom: 2px solid black;
+}
+.header__input:checked + .header__toggle .toggle {
+  border-bottom-color: darkblue;
+}
+.header__input:checked + .header__toggle .toggle::after {
+  opacity: 1;
+  top: 2px;
+  transform: rotate(50deg);
+}
+.header__input:checked + .header__toggle .toggle::before {
+  opacity: 1;
+  top: 2px;
+  transform: rotate(-50deg);
+}
+
+body {
+  font-family: "Crimson Text", sans-serif;
+}
+
+.header__title {
+  margin-block: auto;
+  font-size: 4rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: darkblue;
+  color: white;
+}
+.header .nav {
+  position: fixed;
+  top: 0;
+  background-color: bisque;
+  width: 0;
+  opacity: 0;
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 50rem;
+  height: 100%;
+}
+.header .nav__items {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.header .nav__list {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.header .nav__list a {
+  color: purple;
+  font-size: 2rem;
+}
+.header__input:checked ~ .nav {
+  width: 70%;
+  opacity: 1;
+}/*# sourceMappingURL=global.css.map */

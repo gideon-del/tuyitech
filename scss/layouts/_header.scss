@@ -1,0 +1,11 @@
+.header {
+  outline: limegreen 1px solid;
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    width: min(100%, 102rem);
+    margin-inline: auto;
+    margin-top: 1rem;
+    outline: 1px limegreen solid;
+  }
+}
